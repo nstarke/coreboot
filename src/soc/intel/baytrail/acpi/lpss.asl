@@ -95,6 +95,8 @@ Device (I2C1)
 		Return (^RBUF)
 	}
 
+	Method (_HRV, 0, NotSerialized) { Return (0x06) }
+
 	Method (_STA)
 	{
 		If (LEqual (\S1EN, 1)) {
@@ -154,6 +156,8 @@ Device (I2C2)
 		Return (^RBUF)
 	}
 
+	Method (_HRV, 0, NotSerialized) { Return (0x06) }
+
 	Method (_STA)
 	{
 		If (LEqual (\S2EN, 1)) {
@@ -205,6 +209,8 @@ Device (I2C3)
 		FixedDMA (0x14, 0x4, Width32Bit, )
 		FixedDMA (0x15, 0x5, Width32Bit, )
 	})
+
+	Method (_HRV, 0, NotSerialized) { Return (0x06) }
 
 	Method (_CRS)
 	{
@@ -272,6 +278,8 @@ Device (I2C4)
 		Return (^RBUF)
 	}
 
+	Method (_HRV, 0, NotSerialized) { Return (0x06) }
+
 	Method (_STA)
 	{
 		If (LEqual (\S4EN, 1)) {
@@ -330,6 +338,8 @@ Device (I2C5)
 		Store (\S5B0, RBAS)
 		Return (^RBUF)
 	}
+
+	Method (_HRV, 0, NotSerialized) { Return (0x06) }
 
 	Method (_STA)
 	{
@@ -390,6 +400,8 @@ Device (I2C6)
 		Return (^RBUF)
 	}
 
+	Method (_HRV, 0, NotSerialized) { Return (0x06) }
+
 	Method (_STA)
 	{
 		If (LEqual (\S6EN, 1)) {
@@ -448,6 +460,8 @@ Device (I2C7)
 		Store (\S7B0, RBAS)
 		Return (^RBUF)
 	}
+
+	Method (_HRV, 0, NotSerialized) { Return (0x06) }
 
 	Method (_STA)
 	{
