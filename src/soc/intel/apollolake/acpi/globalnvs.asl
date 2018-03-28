@@ -34,6 +34,7 @@ Field (GNVS, ByteAcc, NoLock, Preserve)
 	E4GM,	8,	// 0x3D - Enable above 4GB MMIO Resource
 	A4GB,	64,	// 0x3E - 0x45 Base of above 4GB MMIO Resource
 	A4GS,	64,	// 0x46 - 0x4D Length of above 4GB MMIO Resource
+	ASLB,	32,	// 0x4E - 0x51 IGD OpRegion Base Address
 
 	/* ChromeOS stuff (0x100 -> 0xfff, size 0xeff) */
 	Offset (0x100),
