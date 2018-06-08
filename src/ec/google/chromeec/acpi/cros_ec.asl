@@ -4,6 +4,9 @@
 Device (CREC)
 {
 	Name (_HID, "GOOG0004")
+#ifdef CONFIG_ACPI_SUBSYSTEM_ID
+	Name (_SUB, CONFIG_ACPI_SUBSYSTEM_ID)
+#endif
 	Name (_UID, 1)
 	Name (_DDN, "EC Command Device")
 #ifdef EC_ENABLE_WAKE_PIN
@@ -35,6 +38,9 @@ Device (CREC)
 	Device (CKSC)
 	{
 		Name (_HID, "GOOG0007")
+#ifdef CONFIG_ACPI_SUBSYSTEM_ID
+		Name (_SUB, CONFIG_ACPI_SUBSYSTEM_ID)
+#endif
 		Name (_UID, 1)
 		Name (_DDN, "EC MKBP Device")
 	}
