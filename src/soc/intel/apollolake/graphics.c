@@ -6,6 +6,7 @@
 #include <bootmode.h>
 #include <cbmem.h>
 #include <console/console.h>
+#include <drivers/intel/gma/gma.h>
 #include <fsp/util.h>
 #include <device/device.h>
 #include <device/pci.h>
@@ -15,6 +16,7 @@
 #include <drivers/intel/gma/libgfxinit.h>
 #include <types.h>
 #include <soc/nvs.h>
+#include "chip.h"
 
 
 uintptr_t gma_get_gnvs_aslb(const void *gnvs)
@@ -75,4 +77,11 @@ uintptr_t graphics_soc_write_acpi_opregion(const struct device *device,
 
 	current += sizeof(igd_opregion_t);
 	return acpi_align_current(current);
+}
+
+const struct i915_gpu_controller_info *
+intel_igd_get_controller_info(const struct device *device)
+{
+	struct soc_intel_apollolake_config *chip = device->chip_info;
+	return &chip->gfx;
 }
