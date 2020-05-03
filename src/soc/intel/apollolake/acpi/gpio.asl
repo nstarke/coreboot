@@ -26,8 +26,10 @@ scope (\_SB) {
 		Method (_CRS, 0x0, NotSerialized)
 		{
 			CreateDwordField (^RBUF, ^RMEM._BAS, RBAS)
+			CreateDwordField (^RBUF, ^RMEM._LEN, RLEN)
 			ShiftLeft (GPIO_COMM0_PID, PCR_PORTID_SHIFT, Local0)
 			Or (CONFIG_PCR_BASE_ADDRESS, Local0, RBAS)
+			Store(0xCEF, RLEN)
 			Return (^RBUF)
 		}
 
@@ -43,7 +45,7 @@ scope (\_SB) {
 		Name (_CID, GPIO_COMM_NAME)
 		Name (_DDN, GPIO_COMM_1_DESC)
 		Name (_UID, 2)
-
+		Name (LINK, "\\_SB.GPO1")
 		Name (RBUF, ResourceTemplate ()
 		{
 			Memory32Fixed (ReadWrite, 0, 0x4000, RMEM)
@@ -56,8 +58,10 @@ scope (\_SB) {
 		Method (_CRS, 0x0, NotSerialized)
 		{
 			CreateDwordField (^RBUF, ^RMEM._BAS, RBAS)
+			CreateDwordField (^RBUF, ^RMEM._LEN, RLEN)
 			ShiftLeft (GPIO_COMM1_PID, PCR_PORTID_SHIFT, Local0)
 			Or (CONFIG_PCR_BASE_ADDRESS, Local0, RBAS)
+			Store(0xAFF, RLEN)
 			Return (^RBUF)
 		}
 
@@ -86,8 +90,10 @@ scope (\_SB) {
 		Method (_CRS, 0x0, NotSerialized)
 		{
 			CreateDwordField (^RBUF, ^RMEM._BAS, RBAS)
+			CreateDwordField (^RBUF, ^RMEM._LEN, RLEN)
 			ShiftLeft (GPIO_COMM2_PID, PCR_PORTID_SHIFT, Local0)
 			Or (CONFIG_PCR_BASE_ADDRESS, Local0, RBAS)
+			Store(0x7BF, RLEN)
 			Return (^RBUF)
 		}
 
@@ -116,8 +122,10 @@ scope (\_SB) {
 		Method (_CRS, 0x0, NotSerialized)
 		{
 			CreateDwordField (^RBUF, ^RMEM._BAS, RBAS)
+			CreateDwordField (^RBUF, ^RMEM._LEN, RLEN)
 			ShiftLeft (GPIO_COMM3_PID, PCR_PORTID_SHIFT, Local0)
 			Or (CONFIG_PCR_BASE_ADDRESS, Local0, RBAS)
+			Store(0x82F, RLEN)
 			Return (^RBUF)
 		}
 

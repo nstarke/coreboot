@@ -753,10 +753,10 @@ void platform_fsp_silicon_init_params_cb(FSPS_UPD *silupd)
 	dev = pcidev_path_on_root(PCH_DEVFN_XDCI);
 	if (!xdci_can_enable())
 		dev->enabled = 0;
-	silconfig->UsbOtg = dev->enabled;
+	silconfig->UsbOtg = 0;
 
 	/* Set VTD feature according to devicetree */
-	silconfig->VtdEnable = cfg->enable_vtd;
+	silconfig->VtdEnable = 1;
 
 	dev = pcidev_path_on_root(SA_DEVFN_IGD);
 	if (CONFIG(RUN_FSP_GOP) && dev && dev->enabled)

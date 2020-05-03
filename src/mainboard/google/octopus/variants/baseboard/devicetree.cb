@@ -114,7 +114,7 @@ chip soc/intel/apollolake
 		device pci 00.1 on  end	# - DPTF
 		device pci 00.2 off end	# - NPK
 		device pci 02.0 on  end	# - Gen
-		device pci 03.0 on  end # - Gaussian Mixture Model (GMM)
+		device pci 03.0 off end # - Gaussian Mixture Model (GMM)
 		chip drivers/intel/wifi
 			register "wake" = "GPE0A_CNVI_PME_STS"
 			device pci 0c.0 on  end	# - CNVi
@@ -132,8 +132,8 @@ chip soc/intel/apollolake
 			end
 		end	# - Audio
 		device pci 0f.0 on  end	# - Heci1
-		device pci 0f.1 on  end	# - Heci2
-		device pci 0f.2 on  end	# - Heci3
+		device pci 0f.1 off end	# - Heci2
+		device pci 0f.2 off end	# - Heci3
 		device pci 11.0 off end	# - ISH
 		device pci 12.0 off end	# - SATA
 		device pci 13.0 on
@@ -244,9 +244,9 @@ chip soc/intel/apollolake
 		device pci 17.1 on  end	# - I2C 5
 		device pci 17.2 on  end	# - I2C 6
 		device pci 17.3 off end	# - I2C 7
-		device pci 18.0 on  end	# - UART 0
+		device pci 18.0 off end	# - UART 0
 		device pci 18.1 off end	# - UART 1
-		device pci 18.2 on  end	# - UART 2
+		device pci 18.2 off end	# - UART 2
 		device pci 18.3 off end	# - UART 3
 		device pci 19.0 on
 			chip drivers/spi/acpi
@@ -258,7 +258,7 @@ chip soc/intel/apollolake
 		end # - GSPI 0
 		device pci 19.1 off end	# - SPI 1
 		device pci 19.2 on  end	# - SPI 2
-		device pci 1a.0 on  end	# - PWM
+		device pci 1a.0 off end	# - PWM
 		device pci 1c.0 on  end	# - eMMC
 		device pci 1e.0 off end	# - SDIO
 		device pci 1f.0 on
